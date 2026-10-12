@@ -197,80 +197,210 @@ a {
 
 
 /* ========================================
-   4. HERO SECTION
+4. HERO SECTION
 ======================================== */
 
 .hero {
-    min-height: 680px;
-    display: flex;
-    align-items: center;
-    padding: 90px 0;
-    background:
-        radial-gradient(
-            circle at 15% 20%,
-            rgba(56, 189, 248, 0.12),
-            transparent 38%
-        ),
-        var(--background);
+min-height: 680px;
+display: flex;
+align-items: center;
+padding: 90px 0;
+background:
+radial-gradient(
+circle at 15% 20%,
+rgba(56, 189, 248, 0.12),
+transparent 38%
+),
+var(--background);
 }
 
 .hero-content {
-    display: grid;
-    grid-template-columns: 1.15fr 0.85fr;
-    align-items: center;
-    gap: 65px;
+display: grid;
+grid-template-columns: minmax(0, 1.15fr) minmax(0, 0.85fr);
+align-items: center;
+gap: 65px;
+width: 100%;
+}
+
+.hero-text {
+min-width: 0;
 }
 
 .hero-text h1 {
-    color: #ffffff;
-    font-size: clamp(2.5rem, 5vw, 4rem);
-    letter-spacing: -2px;
-    line-height: 1.12;
-    margin-bottom: 22px;
-    overflow-wrap: anywhere;
+color: #ffffff;
+font-size: clamp(2.5rem, 5vw, 4rem);
+letter-spacing: -2px;
+line-height: 1.12;
+margin-bottom: 22px;
+overflow-wrap: break-word;
 }
 
 .hero-text h1 span {
-    color: var(--primary);
+color: var(--primary);
 }
 
 .hero-text h2 {
-    color: #ffffff;
-    font-size: 1.5rem;
-    font-weight: 500;
-    margin-bottom: 20px;
+color: #ffffff;
+font-size: 1.5rem;
+font-weight: 500;
+line-height: 1.5;
+margin-bottom: 20px;
 }
 
 .hero-description {
-    max-width: 620px;
-    color: var(--muted);
-    margin-bottom: 28px;
+max-width: 620px;
+color: var(--muted);
+font-size: 1rem;
+line-height: 1.8;
+margin-bottom: 28px;
 }
 
 .hero-buttons {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 14px;
-    margin-bottom: 28px;
+display: flex;
+flex-wrap: wrap;
+gap: 14px;
+margin-bottom: 28px;
 }
 
 .social-links {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 25px;
+display: flex;
+flex-wrap: wrap;
+gap: 20px 25px;
 }
 
 .social-links a {
-    color: var(--muted);
-    font-size: 0.93rem;
-    font-weight: 600;
-    transition: color 0.2s ease;
+color: var(--muted);
+font-size: 0.93rem;
+font-weight: 600;
+transition: color 0.2s ease;
 }
 
 .social-links a:hover {
-    color: var(--primary);
+color: var(--primary);
 }
 
+/* TABLET HERO LAYOUT */
+
+@media (max-width: 950px) {
+
+```
+.hero {
+    min-height: auto;
+    padding: 75px 0;
+}
+
+.hero-content {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 0.8fr);
+    gap: 35px;
+}
+
+.hero-text h1 {
+    font-size: clamp(2.2rem, 4.5vw, 3.2rem);
+    letter-spacing: -1.2px;
+}
+
+.hero-text h2 {
+    font-size: 1.3rem;
+}
+```
+
+}
+
+/* MOBILE HERO LAYOUT */
+
+@media (max-width: 700px) {
+
+```
+.hero {
+    min-height: auto;
+    padding: 55px 0 65px;
+}
+
+.hero-content {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 38px;
+}
+
+.hero-text {
+    width: 100%;
+    text-align: left;
+}
+
+.hero-text h1 {
+    font-size: clamp(2rem, 8vw, 2.8rem);
+    letter-spacing: -0.8px;
+    line-height: 1.15;
+    margin-bottom: 18px;
+    overflow-wrap: break-word;
+}
+
+.hero-text h2 {
+    font-size: 1.2rem;
+    line-height: 1.5;
+    margin-bottom: 16px;
+}
+
+.hero-description {
+    font-size: 1rem;
+    line-height: 1.8;
+    margin-bottom: 24px;
+}
+
+.hero-buttons {
+    gap: 12px;
+    margin-bottom: 25px;
+}
+
+.hero-buttons .button {
+    min-height: 46px;
+    padding: 12px 17px;
+    text-align: center;
+}
+
+.social-links {
+    gap: 15px 20px;
+}
+
+.social-links a {
+    font-size: 0.9rem;
+}
+```
+
+}
+
+/* SMALL MOBILE SCREENS */
+
+@media (max-width: 400px) {
+
+```
+.hero {
+    padding: 40px 0 50px;
+}
+
+.hero-text h1 {
+    font-size: 2rem;
+    letter-spacing: -0.6px;
+}
+
+.hero-text h2 {
+    font-size: 1.1rem;
+}
+
+.hero-buttons {
+    flex-direction: column;
+    align-items: stretch;
+}
+
+.hero-buttons .button {
+    width: 100%;
+}
+
+.social-links {
+    gap: 14px;
+}
+```
+
+}
 
 /* ========================================
    5. PROFILE PICTURE
